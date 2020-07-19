@@ -1,0 +1,50 @@
+<template>
+    <template if:true={someValuesMatched}>
+        <div
+            style="
+                height: 55px;
+                border-style: none;
+                overflow-x: hidden;
+                width: 169px;
+            "
+        >
+            <ul style="list-style-type: none;">
+                <template
+                    for:each={matchedValues}
+                    for:item="ele"
+                    for:index="index"
+                >
+                    <li
+                        key={ele.index}
+                        style="padding-top: 3px;"
+                        onclick={handleclicklist}
+                    >
+                        {ele.name}
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+    <template if:false={someValuesMatched}>
+        <div
+            style="
+                height: 55px;
+                border-style: none;
+                overflow-x: hidden;
+                width: 169px;
+            "
+        >
+            <ul style="list-style-type: none;">
+                <template
+                    for:each={matchedValues}
+                    for:item="ele"
+                    for:index="index"
+                >
+                    <li key={ele.index} style="padding-top: 3px;">
+                        {ele.name}
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>
